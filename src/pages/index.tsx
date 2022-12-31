@@ -6,7 +6,6 @@ import Footer from 'components/Common/Footer'
 import CategoryList from 'components/Main/CategoryList'
 import PostList from 'components/Main/PostList'
 import { graphql } from 'gatsby'
-import { PostType } from 'components/Main/PostList'
 import { PostListItemType } from 'types/PostItem.types'
 
 type IndexPageProps = {
@@ -61,7 +60,9 @@ export const getPostList = graphql`
             date(formatString: "YYYY.MM.DD.")
             categories
             thumbnail {
-              publicURL
+              childImageSharp {
+                gatsbyImageData(width: 768, height: 400)
+              }
             }
           }
         }
