@@ -1,13 +1,22 @@
 import React, { FunctionComponent } from 'react'
-import Text from 'components/Text'
-import { Link } from 'gatsby'
+import styled from '@emotion/styled'
+import GlobalStyle from 'components/Common/GlobalStyle'
+import Introduction from 'components/Main/Introduction'
+import Footer from 'components/Common/Footer'
 
-const IndexPage: FunctionComponent = function () {
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`
+
+const IndexPage: FunctionComponent = () => {
   return (
-    <div>
-      <Text text="Hello, World!" />
-      <Link to="/info/">To Info</Link>
-    </div>
+    <Container>
+      <GlobalStyle />
+      <Introduction />
+      <Footer />
+    </Container>
   )
 }
 
