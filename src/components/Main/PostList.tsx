@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import PostItem from './PostItem'
+import { PostListItemType } from 'types/PostItem.types'
 
 const POST_ITEM_DATA = {
   title: 'Post Item Title',
@@ -11,6 +12,25 @@ const POST_ITEM_DATA = {
   thumbnail:
     '<https://ji5485.github.io/static/e4f34c558ae8e8235ff53b0311085796/4d854/javascript-core-concept-summary-function-1.webp>',
   link: '<https://www.google.co.kr/>',
+}
+
+export type PostType = {
+  node: {
+    id: string
+    frontmatter: {
+      title: string
+      summary: string
+      date: string
+      categories: string[]
+      thumbnail: {
+        publicURL: string
+      }
+    }
+  }
+}
+
+type PostListProps = {
+  posts: PostListItemType[]
 }
 
 const PostListWrapper = styled.div`
@@ -28,13 +48,12 @@ const PostListWrapper = styled.div`
   }
 `
 
-const PostList: FunctionComponent = function () {
+const PostList: FunctionComponent<PostListProps> = function ({ posts }) {
   return (
     <PostListWrapper>
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
+      {posts.map(({ node: { id, frontmatter } }: PostType) => (
+        <PostItem {...frontmatter} link="https://www.google.co.kr/" key={id} />
+      ))}
     </PostListWrapper>
   )
 }
