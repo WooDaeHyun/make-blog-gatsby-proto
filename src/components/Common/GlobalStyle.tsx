@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+// import 'fontsource-noto-sans-kr'
 import { Global, css } from '@emotion/react'
 
 const defaultStyle = css`
@@ -8,14 +9,16 @@ const defaultStyle = css`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Noto Sans KR';
+    background-color: #282828;
+    color: #eaeaeb;
   }
 
-  html,
+  /* html,
   body,
   #__gatsby {
     height: 100%;
-  }
+  } */
 
   a,
   a:hover {
@@ -30,5 +33,3 @@ const GlobalStyle: FunctionComponent = function () {
 }
 
 export default GlobalStyle
-
-

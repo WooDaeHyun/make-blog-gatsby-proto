@@ -8,6 +8,7 @@ import { PostListItemType } from 'types/PostItem.types'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import queryString, { ParsedQuery } from 'query-string'
 import Template from 'components/Common/Template'
+import { Link } from 'gatsby'
 
 type IndexPageProps = {
   location: {
@@ -29,6 +30,37 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+`
+
+const BottomContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 1400px;
+
+  @media (max-width: 1400px) {
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+`
+
+const ContactInfo = styled.div`
+  border: 1px solid #eaeaeb;
+  width: 250px;
+  height: 300px;
+  margin-top: 50px;
+  margin-left: 25px;
+  padding: 10px 10px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    width: auto;
+    margin-right: 30px;
+    padding: 50px 20px;
+  }
 `
 
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
@@ -72,14 +104,28 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   )
 
   return (
-    <Template>
-      <Introduction profileImage={gatsbyImageData} />
-      <CategoryList
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
-      />
-      <PostList selectedCategory={selectedCategory} posts={edges} />
-    </Template>
+    <Container>
+      <Template>
+        <Introduction profileImage={gatsbyImageData} />
+        <BottomContainer>
+          <CategoryList
+            selectedCategory={selectedCategory}
+            categoryList={categoryList}
+          />
+          <PostList selectedCategory={selectedCategory} posts={edges} />
+          <ContactInfo>
+            <h3> ☎️ contact</h3>
+            <br />
+            <h3> 📨 E-mail : po668312@naver.com</h3>
+            <br />
+            <Link to="https://pinetree93.tistory.com/">
+              📝 Tistory : https://pinetree93.tistory.com/
+            </Link>
+            <br />
+          </ContactInfo>
+        </BottomContainer>
+      </Template>
+    </Container>
   )
 }
 
