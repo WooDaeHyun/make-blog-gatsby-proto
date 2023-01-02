@@ -47,13 +47,12 @@ const CategoryListWrapper = styled.div`
 `
 
 const ListWrapper = styled.div`
-  position: fixed;
   display: flex;
   flex-direction: column;
   width: 200px;
   height: auto;
   padding: 10px 0px 10px 20px;
-  border: 1px solid #ff007f;
+  border: 1px solid #ff00dd;
 
   @media (max-width: 1400px) {
     flex-direction: row;

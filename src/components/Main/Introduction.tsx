@@ -21,8 +21,8 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: #282828
   width: 768px;
-  height: 300px;
-  margin: 0 auto;
+  height: 350px;
+  margin: 0px auto;
   border-bottom: 1px solid #eaeaeb;
  
 
@@ -52,7 +52,7 @@ const SubTitle = styled.div`
   align-self: center;
   font-size: 20px;
   font-weight: 400;
-  color: #ff007f;
+  color: #ff00dd;
   margin-bottom: 20px;
 
   @media (max-width: 768px) {

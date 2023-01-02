@@ -1,6 +1,13 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 
+// const FooterContainer = styled.div`
+//   display: flex;
+//   height: 500px;
+//   justify-content: center;
+//   align-items: center;
+// `
+
 const FooterWrapper = styled.div`
   display: grid;
   place-items: center;

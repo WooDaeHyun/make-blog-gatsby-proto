@@ -35,8 +35,9 @@ const Container = styled.div`
 const BottomContainer = styled.div`
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  width: 1400px;
+  flex-wrap: nowrap;
+  margin-top: 25px;
+  width: 100%;
 
   @media (max-width: 1400px) {
     flex-direction: column;
@@ -47,12 +48,45 @@ const BottomContainer = styled.div`
   }
 `
 
+const BottomLeftContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 140px;
+  align-items: center;
+`
+
+const BottomRightContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 1400px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+`
+
+const AboutMeLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 95px;
+  width: 200px;
+  height: 50px;
+  border: 1px solid white;
+`
+
 const ContactInfo = styled.div`
   border: 1px solid #eaeaeb;
   width: 250px;
   height: 300px;
   margin-top: 50px;
-  margin-left: 25px;
+  margin-left: 80px;
   padding: 10px 10px;
 
   @media (max-width: 768px) {
@@ -108,21 +142,26 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       <Template>
         <Introduction profileImage={gatsbyImageData} />
         <BottomContainer>
-          <CategoryList
-            selectedCategory={selectedCategory}
-            categoryList={categoryList}
-          />
-          <PostList selectedCategory={selectedCategory} posts={edges} />
-          <ContactInfo>
-            <h3> ☎️ contact</h3>
-            <br />
-            <h3> 📨 E-mail : po668312@naver.com</h3>
-            <br />
-            <Link to="https://pinetree93.tistory.com/">
-              📝 Tistory : https://pinetree93.tistory.com/
-            </Link>
-            <br />
-          </ContactInfo>
+          <BottomLeftContainer>
+            <AboutMeLink href="/info">👆🏼 About Me</AboutMeLink>
+            <CategoryList
+              selectedCategory={selectedCategory}
+              categoryList={categoryList}
+            />
+          </BottomLeftContainer>
+          <BottomRightContainer>
+            <PostList selectedCategory={selectedCategory} posts={edges} />
+            <ContactInfo>
+              <h3> ☎️ contact</h3>
+              <br />
+              <h3> 📨 E-mail : po668312@naver.com</h3>
+              <br />
+              <Link to="https://pinetree93.tistory.com/">
+                📝 Tistory : https://pinetree93.tistory.com/
+              </Link>
+              <br />
+            </ContactInfo>
+          </BottomRightContainer>
         </BottomContainer>
       </Template>
     </Container>

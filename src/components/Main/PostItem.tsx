@@ -16,7 +16,7 @@ const PostItemWrapper = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 0 2px rgba(255, 255, 255, 0.33);
+    box-shadow: 0 0 10px gray;
   }
 `
 
