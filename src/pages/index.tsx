@@ -51,8 +51,17 @@ const BottomContainer = styled.div`
 const BottomLeftContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 140px;
+  margin-right: 60px;
   align-items: center;
+
+  @media (max-width: 1400px) {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
 `
 
 const BottomRightContainer = styled.div`
@@ -73,17 +82,27 @@ const BottomRightContainer = styled.div`
 const AboutMeLink = styled.a`
   display: flex;
   justify-content: center;
+  font-size: 18px;
+  font-weight: 400;
   align-items: center;
   margin-top: 50px;
   margin-left: 95px;
   width: 200px;
   height: 50px;
   border: 1px solid white;
+
+  @media (max-width: 1400px) {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 `
 
 const ContactInfo = styled.div`
   border: 1px solid #eaeaeb;
-  width: 250px;
+  width: 280px;
   height: 300px;
   margin-top: 50px;
   margin-left: 80px;
@@ -93,6 +112,7 @@ const ContactInfo = styled.div`
     grid-template-columns: 1fr;
     width: auto;
     margin-right: 30px;
+    margin-bottom: 40px;
     padding: 50px 20px;
   }
 `
@@ -143,7 +163,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
         <Introduction profileImage={gatsbyImageData} />
         <BottomContainer>
           <BottomLeftContainer>
-            <AboutMeLink href="/info">👆🏼 About Me</AboutMeLink>
+            <AboutMeLink href="/info">ABOUT ME</AboutMeLink>
             <CategoryList
               selectedCategory={selectedCategory}
               categoryList={categoryList}
@@ -156,8 +176,11 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
               <br />
               <h3> 📨 E-mail : po668312@naver.com</h3>
               <br />
-              <Link to="https://pinetree93.tistory.com/">
-                📝 Tistory : https://pinetree93.tistory.com/
+              <Link
+                to="https://pinetree93.tistory.com"
+                style={{ fontSize: 18, fontWeight: 400 }}
+              >
+                📝 Tistory : https://pinetree93.tistory.com
               </Link>
               <br />
             </ContactInfo>

@@ -28,7 +28,10 @@ const CategoryListWrapper = styled.div`
   /* position: fixed; */
 
   h3 {
-    /* align-self: center; */
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: 768px) {
       padding-right: 20px;
